@@ -17,7 +17,22 @@ export default function Root({ children }: { children: ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head suppressHydrationWarning>
-        <title>Waku Template</title>
+        <title>Pikitia Docs</title>
+        <meta
+          name="description"
+          content="Pikitia: A minimal React based image generator!"
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta property="og:title" content="Pikitia" />
+        <meta
+          property="og:description"
+          content="A minimal React based image generator!"
+        />
+        <meta property="og:image" content="/og.png" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://github.com/hamlim/pikitia" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="/og.png" />
       </head>
       <body>
         <script

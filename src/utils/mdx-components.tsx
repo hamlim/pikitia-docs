@@ -1,3 +1,5 @@
+import { Anchor } from "#/components/anchor";
+
 export function useMDXComponents() {
   return {
     h1: (props) => (
@@ -33,12 +35,7 @@ export function useMDXComponents() {
         {...props}
       />
     ),
-    a: (props) => (
-      <a
-        className="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 [&.state-disabled]:text-gray-400 [&.state-disabled]:cursor-not-allowed text-primary underline-offset-4 hover:underline focus:underline"
-        {...props}
-      />
-    ),
+    a: Anchor,
     p: (props) => <p {...props} />,
     ul: (props) => <ul {...props} />,
     ol: (props) => <ol {...props} />,

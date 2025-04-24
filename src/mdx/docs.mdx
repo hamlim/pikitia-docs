@@ -1,0 +1,84 @@
+import {Anchor} from '#/components/anchor';
+import {StarIcon} from 'lucide-react';
+
+# `pikitia`
+
+A minimal wrapper around satori to generate images using React!
+
+<div className="text-center">
+  <Anchor href="https://github.com/hamlim/pikitia"><StarIcon className="h-6 w-6 pr-2" /> Star on GitHub</Anchor>
+</div>
+
+<h2 id="getting-started">Getting Started</h2>
+
+### Installation:
+
+```sh
+bun i pikitia -D
+```
+
+`pikitia` supports any runtime that supports `wasm` loading, along with: 
+
+- `node:fs`
+- `node:path`
+- `node:url`
+
+It's been tested in Bun, Node, and Deno.
+
+### Usage:
+
+`pikitia` exports a `generateImage` function that offers a similar API as the default export of the `satori` library, except it will return a `Promise<ArrayBuffer>` for a PNG image.
+
+Here's a more complete example:
+
+```tsx
+import { generateImage } from "pikitia";
+
+let pngBuffer = await generateImage(
+  <div
+    style={{
+      display: "flex",
+      padding: "40px",
+      justifyContent: "center",
+      alignItems: "center",
+      width: "100%",
+      height: "100%",
+      fontSize: 40,
+      flexDirection: "column",
+      color: "black",
+      backgroundColor: "white",
+      textAlign: "center",
+      // Inter regular font is loaded by default
+      fontFamily: "Inter",
+    }}
+  >
+    <h1>Hello World 👋</h1>
+    <p
+      style={{
+        textDecoration: "underline",
+        color: "dodgerblue",
+      }}
+    >
+      Other styles work too!
+    </p>
+  </div>,
+  {
+    width: 1200,
+    height: 600,
+    // Other options are supported here too
+    // Check out Satori docs for more details!
+  },
+);
+
+// write the file
+await Bun.write("./public/simple-example.png", pngBuffer);
+```
+
+The above code will render an image like this:
+
+![Hello World (waving hand emoji), other styles work too!](/simple-example.png)
+
+Check out [`satori`'s docs](https://github.com/vercel/satori) for more details on the available options.
+
+Notably; `pikitia` comes preconfigured with the [`Inter` font](https://rsms.me/inter/) and also [Twemoji v16](https://github.com/jdecked/twemoji) for emoji. You can however add in additional fonts or customize the loading behavior of emoji using `graphemeImages` or `loadAdditionalAsset` (providing `loadAdditionalAsset` will override the default implementation).
+

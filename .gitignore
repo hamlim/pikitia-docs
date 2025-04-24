@@ -7,3 +7,4 @@ dist
 .env.test.local
 wrangler.toml
 tsconfig.tsbuildinfo
+.DS_Store

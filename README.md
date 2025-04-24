@@ -1,10 +1,8 @@
-# Waku Template App
+# Pikitia Docs
 
-Things to change after using this template:
 
-- `package.json` - `name`
-- `wrangler.jsonc` - `name`
-- title/metadata/etc within the app!
+Docs site for [`pikitia`](https://github.com/hamlim/pikitia).
+
 
 Get started with:
 

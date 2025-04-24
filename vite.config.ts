@@ -12,6 +12,8 @@ export default defineConfig({
   resolve: {
     alias: {
       "#utils/*": "./src/utils/*",
+      "#/components/*": "./src/components/*",
+      "#/mdx/*": "./src/mdx/*",
     },
   },
   plugins: [
