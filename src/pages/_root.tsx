@@ -30,7 +30,10 @@ export default function Root({ children }: { children: ReactNode }) {
         />
         <meta property="og:image" content="/og.png" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://github.com/hamlim/pikitia" />
+        <meta
+          property="og:url"
+          content="https://pikitia-docs.mhamlin.workers.dev/"
+        />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:image" content="/og.png" />
       </head>
